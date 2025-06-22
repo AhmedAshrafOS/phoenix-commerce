@@ -26,7 +26,7 @@ export default function CustomerProfile() {
   const [newAddress, setNewAddress] = useState({
     street: "", city: "", governorate: "",
     buildingNumber: "", apartmentNumber: "",
-    floor: "", country: "", isPrimary: false
+    floor: "", country: "", primary: false
   });
 
   // password form
@@ -66,7 +66,7 @@ export default function CustomerProfile() {
     setNewAddress({
       street: "", city: "", governorate: "",
       buildingNumber: "", apartmentNumber: "",
-      floor: "", country: "", isPrimary: false
+      floor: "", country: "", primary: false
     });
     fetchProfile();
   };
@@ -237,9 +237,9 @@ export default function CustomerProfile() {
                   <div className="flex items-center gap-2">
                     <input
                       type="checkbox"
-                      checked={newAddress.isPrimary}
+                      checked={newAddress.primary}
                       onChange={e =>
-                        setNewAddress(n => ({ ...n, isPrimary: e.target.checked }))
+                        setNewAddress(n => ({ ...n, primary: e.target.checked }))
                       }
                       className="rounded focus:ring"
                     />
