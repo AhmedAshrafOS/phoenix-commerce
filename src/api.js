@@ -35,6 +35,10 @@ api.interceptors.response.use(
     const { response, config } = err;
     const originalRequest = config;
     // if no response / not HTTP or not 401, just bail
+    if(!localStorage.getItem('token') ||localStorage.getItem('token').length() <=1 || response.status === 404){
+        return Promise.reject(err);
+
+    }
     if (!response || (response.status !== 401 && response.status !== 403)) {
       return Promise.reject(err);
     }
