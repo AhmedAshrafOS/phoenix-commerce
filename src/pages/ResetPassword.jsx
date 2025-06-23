@@ -44,7 +44,7 @@ const ResetPassword = () => {
       return
     }
     setIsSubmitting(true)
-    const reset = axios.post(`${backendUrl}/auth/reset-password`, {
+    const reset = api.post(`${backendUrl}/auth/reset-password`, {
       token,
       newPassword: form.newPassword
     })

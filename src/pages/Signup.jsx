@@ -23,7 +23,7 @@ const Signup = () => {
     e.preventDefault();
     setIsSubmitting(true);
 
-      const registerPromise = axios.post(
+      const registerPromise = api.post(
           `${backendUrl}/auth/register`,
           form
         );
