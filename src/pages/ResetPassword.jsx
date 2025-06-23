@@ -33,18 +33,18 @@ const ResetPassword = () => {
   }, [backendUrl, token])
 
   // 2️⃣ Handle form input
-  const handleChange = e =>
+  const handleChange =  e =>
     setForm(f => ({ ...f, [e.target.name]: e.target.value }))
 
   // 3️⃣ Submit new password
-  const handleSubmit = e => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
     if (form.newPassword !== form.confirmPassword) {
       toast.error('Passwords do not match')
       return
     }
     setIsSubmitting(true)
-    const reset = api.post(`${backendUrl}/auth/reset-password`, {
+    const reset = await api.post(`${backendUrl}/auth/reset-password`, {
       token,
       newPassword: form.newPassword
     })
