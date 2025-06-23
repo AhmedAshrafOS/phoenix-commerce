@@ -4,7 +4,7 @@ import { useSearchParams, useNavigate } from 'react-router-dom'
 import axios from 'axios'
 import { toast } from 'react-toastify'
 import { ShopContext } from '../context/ShopContext'
-import api from '../api'
+
 const ResetPassword = () => {
   const { backendUrl } = useContext(ShopContext)
   const [searchParams] = useSearchParams()
@@ -33,18 +33,18 @@ const ResetPassword = () => {
   }, [backendUrl, token])
 
   // 2️⃣ Handle form input
-  const handleChange =  e =>
+  const handleChange = e =>
     setForm(f => ({ ...f, [e.target.name]: e.target.value }))
 
   // 3️⃣ Submit new password
-  const handleSubmit = async (e) => {
+  const handleSubmit = e => {
     e.preventDefault()
     if (form.newPassword !== form.confirmPassword) {
       toast.error('Passwords do not match')
       return
     }
     setIsSubmitting(true)
-    const reset = await api.post(`${backendUrl}/auth/reset-password`, {
+    const reset = axios.post(`${backendUrl}/auth/reset-password`, {
       token,
       newPassword: form.newPassword
     })
