@@ -11,7 +11,7 @@ const ShopContextProvider = (props) => {
 
     const currency = '$';
     const delivery_fee = 10;
-    const backendUrl = "http://localhost:8080/ecommerce-service/api/v1";
+    const backendUrl = "https://shoptronix-7d09f5a89831.herokuapp.com/ecommerce-service/api/v1";
 
     const navigate = useNavigate();
     const [token, setToken] = useState('');
