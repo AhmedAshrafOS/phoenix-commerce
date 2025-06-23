@@ -4,7 +4,7 @@ import { useSearchParams, useNavigate } from 'react-router-dom'
 import axios from 'axios'
 import { toast } from 'react-toastify'
 import { ShopContext } from '../context/ShopContext'
-
+import api from '../api'
 const ResetPassword = () => {
   const { backendUrl } = useContext(ShopContext)
   const [searchParams] = useSearchParams()
