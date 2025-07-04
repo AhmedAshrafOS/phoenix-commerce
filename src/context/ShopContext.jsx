@@ -13,6 +13,7 @@ const ShopContextProvider = (props) => {
     const delivery_fee = 10;
     const backendUrl = "https://phoenix-ecommerce-e4dcd668b54f.herokuapp.com/ecommerce-service/api/v1";
 
+    
     const navigate = useNavigate();
     const [token, setToken] = useState('');
     const [search, setSearch] = useState('');
