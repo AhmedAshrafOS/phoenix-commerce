@@ -4,7 +4,7 @@ import { toast } from 'react-toastify';
 
 // 1) create an axios instance
 const api = axios.create({
-  baseURL: 'https://shoptronix-7d09f5a89831.herokuapp.com/ecommerce-service/api/v1',
+  baseURL: 'https://phoenix-ecommerce-e4dcd668b54f.herokuapp.com/ecommerce-service/api/v1',
   withCredentials: true,
 });
 

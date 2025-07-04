@@ -8,7 +8,7 @@ const LatestCollection = () => {
   const [latestProducts, setLatestProducts] = useState([]);
 
   useEffect(() => {
-    
+    getAllProducts()
     setLatestProducts(products.slice(0, 10));
   }, [products]); 
 
@@ -25,7 +25,7 @@ const LatestCollection = () => {
       <div className='grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 gap-y-6'>
         {latestProducts.map((item, index) => (
           
-          <ProductItem key={index} id={item.productId} imageUrl={item.productImage.imageUrl} name={item.name} price={item.price} discountPercentage = {item.discountPercentage} />
+          <ProductItem key={item.productId} id={item.productId} imageUrl={item.productImage.imageUrl} name={item.name} price={item.price} discountPercentage = {item.discountPercentage} />
         ))}
       </div>
     </div>

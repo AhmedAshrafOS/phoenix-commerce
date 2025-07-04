@@ -11,7 +11,7 @@ const ShopContextProvider = (props) => {
 
     const currency = '$';
     const delivery_fee = 10;
-    const backendUrl = "https://shoptronix-7d09f5a89831.herokuapp.com/ecommerce-service/api/v1";
+    const backendUrl = "https://phoenix-ecommerce-e4dcd668b54f.herokuapp.com/ecommerce-service/api/v1";
 
     const navigate = useNavigate();
     const [token, setToken] = useState('');
@@ -25,20 +25,14 @@ const ShopContextProvider = (props) => {
 
     useEffect(() => {
 
-        getAllProducts()
-        if (!token.length > 0 && localStorage.getItem('token')) {
-
+   
+        if (localStorage.getItem('token').length > 1) {
+            getUserCart(token)
             setToken(localStorage.getItem('token'))
             fetchProfile();
         }
-        else if (token.length > 0) {
-            getUserCart(token)
-              fetchProfile();
-        }
         else {
             const saved = Cookies.get('cartItems');
-
-            
             if (saved) {
                 try {
 
