@@ -7,14 +7,12 @@ const LatestCollection = () => {
   const { products ,getAllProducts} = useContext(ShopContext); // Only accessing the necessary value
   const [latestProducts, setLatestProducts] = useState([]);
 
-  // useEffect(() => {
-  //   getAllProducts()
-  // }, [products]); 
 
-
-  // useEffect(() => {
-  //   setLatestProducts(products.slice(0, 10));
-  // }, [latestProducts]); 
+  useEffect(() => {
+     getAllProducts()
+    var clonedProducts = [...products];
+    setLatestProducts(clonedProducts.slice(0, 5));
+  }, [products]); 
 
 
   return (
