@@ -3,7 +3,8 @@ import axios from 'axios';
 import { ShopContext } from '../context/ShopContext';
 import { useSearchParams, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
-import api from '../api'
+import api from '../api';
+
 const VerifyEmail = () => {
   const { backendUrl} = useContext(ShopContext);
   const [searchParams] = useSearchParams();

@@ -5,7 +5,7 @@ import { assets } from '../assets/assets';
 import axios from 'axios';
 import { toast } from 'react-toastify';
 import { useNavigate } from 'react-router-dom';
-import api from '../api'
+import api from '../api';
 
 const Wishlist = () => {
   const { backendUrl, token, currency, getUserCart,wishlistData,setWishlistData,getWishlist } = useContext(ShopContext);

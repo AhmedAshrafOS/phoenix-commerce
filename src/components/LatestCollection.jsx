@@ -9,8 +9,12 @@ const LatestCollection = () => {
 
   useEffect(() => {
     getAllProducts()
-    setLatestProducts(products.slice(0, 10));
   }, [products]); 
+
+
+  useEffect(() => {
+    setLatestProducts(products.slice(0, 10));
+  }, [latestProducts]); 
 
 
   return (
