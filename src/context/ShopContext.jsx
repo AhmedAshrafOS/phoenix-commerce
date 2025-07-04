@@ -27,7 +27,7 @@ const ShopContextProvider = (props) => {
     useEffect(() => {
 
    
-        if (localStorage.getItem('token').length > 1) {
+        if (localStorage.getItem('token') && localStorage.getItem('token').length > 1) {
             getUserCart(token)
             setToken(localStorage.getItem('token'))
             fetchProfile();
